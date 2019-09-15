@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>文件上传表单</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+<h3>文件上传：</h3>
+选择一个文件上传: <br />
+<!--<form action="" method="post" enctype="multipart/form-data">-->
+<!--    <input type="file" name="image" size="50" />-->
+<!--    <br />-->
+<!--    <input type="submit" value="上传文件" />-->
+<!--</form>-->
+<p><input type="file" id="file"></p>
+<p><button onclick="uploadfile()">提交</button></p>
+<p><img src="" alt="" class="img"></p>
+</body>
+<script>
+    function uploadfile() {
+        let file = $('#file').get(0).files[0];
+        console.log(file);
+        let formdata = new FormData(); //创建formdata对象
+        formdata.append('hehe', file);
+        $.ajax({
+            url: 'http://localhost:3000/file/upload',
+            type: 'POST',
+            cache: false, //不必须
+            data: formdata,
+            processData: false,//必须
+            contentType: false,//必须
+            success(data) {
+                console.log(data);
+                if(data.err==0) {
+                    $('.img').attr('src',data.img)
+                }else {
+                    alert('上传失败')
+                }
+            }
+
+        })
+    }
+</script>
+</html>

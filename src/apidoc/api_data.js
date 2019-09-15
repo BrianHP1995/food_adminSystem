@@ -1,0 +1,494 @@
+define({ "api": [
+  {
+    "type": "post",
+    "url": "/food/add",
+    "title": "添加食品",
+    "name": "____",
+    "group": "Food",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>食品名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "price",
+            "description": "<p>食品价格</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "desc",
+            "description": "<p>食品描述</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "img",
+            "description": "<p>食品图片</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "typeName",
+            "description": "<p>类名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "typeID",
+            "description": "<p>类ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>Firstname of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>Lastname of the User.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./foodRouter.js",
+    "groupTitle": "Food"
+  },
+  {
+    "type": "get",
+    "url": "/food/del",
+    "title": "删除菜品",
+    "name": "del",
+    "group": "Food",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>Firstname of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>Lastname of the User.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./foodRouter.js",
+    "groupTitle": "Food"
+  },
+  {
+    "type": "get",
+    "url": "/food/getInfoByPage",
+    "title": "分页查询",
+    "name": "getInfoByPage",
+    "group": "Food",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageSize",
+            "description": "<p>每页数据条数</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>页码</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>Firstname of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>Lastname of the User.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./foodRouter.js",
+    "groupTitle": "Food"
+  },
+  {
+    "type": "get",
+    "url": "/food/getInfoByType",
+    "title": "分类查询",
+    "name": "getInfoByType",
+    "group": "Food",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "typeID",
+            "description": "<p>分类id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>Firstname of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>Lastname of the User.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./foodRouter.js",
+    "groupTitle": "Food"
+  },
+  {
+    "type": "get",
+    "url": "/food/getInfoBykw",
+    "title": "关键字查询",
+    "name": "getInfoBykw",
+    "group": "Food",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "kw",
+            "description": "<p>关键字</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>Firstname of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>Lastname of the User.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./foodRouter.js",
+    "groupTitle": "Food"
+  },
+  {
+    "type": "get",
+    "url": "/food/update",
+    "title": "修改菜品",
+    "name": "update",
+    "group": "Food",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>食品名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "price",
+            "description": "<p>食品价格</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "desc",
+            "description": "<p>食品描述</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "img",
+            "description": "<p>食品图片</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "typeName",
+            "description": "<p>类名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "typeID",
+            "description": "<p>类ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>Firstname of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>Lastname of the User.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./foodRouter.js",
+    "groupTitle": "Food"
+  },
+  {
+    "type": "post",
+    "url": "/user/register",
+    "title": "用户注册",
+    "name": "____",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "us",
+            "description": "<p>用户名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ps",
+            "description": "<p>密码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "mail",
+            "description": "<p>邮箱</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>Firstname of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>Lastname of the User.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./userRouter.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/user/getMailCode",
+    "title": "发送邮箱验证码",
+    "name": "_______",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "mail",
+            "description": "<p>邮箱</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>Firstname of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>Lastname of the User.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./userRouter.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/user/login",
+    "title": "用户登录",
+    "name": "login",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "us",
+            "description": "<p>用户名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ps",
+            "description": "<p>密码</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>Firstname of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>Lastname of the User.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./userRouter.js",
+    "groupTitle": "User"
+  }
+] });
